@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.20.0 FATAL_ERROR)
 
+include_directories(C:/msys64/mingw64/include)
+link_directories(C:/msys64/mingw64/lib)
+
 #Функция прерывания 
 function(exit_cmake)
   message("Прерывание настройки")
@@ -28,7 +31,7 @@ find_package(GTest REQUIRED)
 if(GTest_FOUND)
   message("Тесты найдены")
   include(GoogleTest)
-  include_directories(${GTEST_INCLUDE_DIR})
+  #include_directories(${GTEST_INCLUDE_DIR})
 endif()
 
 enable_testing()
@@ -61,12 +64,15 @@ if(Boost_FOUND)
 
     message("Исполняемый файл создан")
 
-    if(GTest_FOUND)
-      message("GTEST найден")
-      add_executable(test_version test_version.cpp)
-      target_link_libraries(test_version
-      ${GTEST_LIBRARY})
-    endif()
+    # if(GTest_FOUND)
+    #   message("GTEST найден")
+    #   set(FooTestArgs --foo 1 --bar 2)
+    #   add_executable(test_version test_version.cpp)
+    #   target_link_libraries(test_version
+    #   ${GTEST_LIBRARY} helloworld)
+    #   set_target_properties(test_version PROPERTIES CXX_STANDARD 20 
+    #   CXX_STANDARD_REQUIRED ON)
+    # endif()
 
 else()
   exit_cmake()
@@ -93,3 +99,4 @@ include(CPack)
 
 #Добавление теста
 #add_test(test_version test_version)
+#gtest_add_tests(test_version "${FooTestArgs}" AUTO)
