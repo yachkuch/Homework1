@@ -97,6 +97,8 @@ set(CPACK_PACKAGE_CONTACT yachkuch@gmail.com)
 
 include(CPack)
 
+install(TARGETS Test_ci_cd RUNTIME DESTINATION bin)
+
 #Добавление теста
 #add_test(test_version test_version)
 #gtest_add_tests(test_version "${FooTestArgs}" AUTO)
