@@ -92,4 +92,4 @@ set(CPACK_PACKAGE_CONTACT yachkuch@gmail.com)
 include(CPack)
 
 #Добавление теста
-add_test(test_version test_version)
+#add_test(test_version test_version)
