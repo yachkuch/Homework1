@@ -36,7 +36,7 @@ enable_testing()
 #Поиск BOOST 
 cmake_policy(SET CMP0074 NEW)
 set(Boost_DEBUG ON)
-find_package( Boost REQUIRED COMPONENTS system filesystem )
+find_package(Boost REQUIRED)
 
 #Файл конфигурации и версионности
 
